@@ -30,10 +30,17 @@ export const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
             {/* Updated text, added hover={true} */}
             <CipherText text="ONISAKI株式会社" hover={true} delay={1500} />
           </span>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-oni-cyan via-oni-purple to-oni-magenta cursor-pointer">
-             {/* Added hover={true} */}
-             <CipherText text="CREATIVE LAB" hover={true} delay={2000} />
-          </span>
+          {/* 
+            FIX: Applied gradient classes directly to CipherText className prop.
+            Wrapping it in a span causes issues on mobile WebKit browsers with background-clip: text 
+            on inline-block children.
+          */}
+          <CipherText 
+            text="CREATIVE LAB" 
+            hover={true} 
+            delay={2000} 
+            className="text-transparent bg-clip-text bg-gradient-to-r from-oni-cyan via-oni-purple to-oni-magenta cursor-pointer"
+          />
         </h1>
 
         {/* Replaced static paragraph with CyberServices */}
