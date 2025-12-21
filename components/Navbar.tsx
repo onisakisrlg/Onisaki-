@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { Section } from '../types';
+import { Logo } from './ui/Logo';
 
 interface NavbarProps {
   activeSection: Section;
@@ -58,27 +59,12 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, scrollToSection, 
       <div className="container mx-auto px-6 flex justify-between items-center relative z-50">
         {/* Logo */}
         <div 
-          className="font-serif font-[800] tracking-widest cursor-pointer flex items-center gap-3 group"
           onClick={() => {
             scrollToSection(Section.HERO);
             setIsMobileMenuOpen(false);
           }}
         >
-           {/* Cyber Reactor Logo Animation */}
-           <div className="relative w-10 h-10 flex items-center justify-center">
-              {/* Outer Ring (Cyan) */}
-              <div className="absolute w-full h-full rounded-full border-2 border-t-oni-cyan border-r-oni-cyan border-b-transparent border-l-transparent animate-[spin_3s_linear_infinite] group-hover:animate-[spin_1s_linear_infinite] transition-all opacity-80 shadow-[0_0_10px_rgba(0,240,255,0.5)]"></div>
-              
-              {/* Inner Ring (Magenta) */}
-              <div className="absolute w-6 h-6 rounded-full border-2 border-t-transparent border-r-transparent border-b-oni-magenta border-l-oni-magenta animate-[spin_4s_linear_infinite_reverse] group-hover:animate-[spin_1.5s_linear_infinite_reverse] transition-all opacity-80"></div>
-              
-              {/* Core (White/Purple) */}
-              <div className="w-2 h-2 bg-black dark:bg-white rounded-full animate-pulse shadow-[0_0_15px_rgba(255,255,255,0.8)] group-hover:bg-oni-purple transition-colors"></div>
-           </div>
-
-          <span className="text-lg md:text-xl font-[800] text-gray-900 dark:text-white tracking-wider group-hover:text-oni-cyan transition-colors duration-300">
-            ONISAKI株式会社
-          </span>
+           <Logo className="w-10 h-10 md:w-12 md:h-12" />
         </div>
 
         {/* Desktop Menu - Bilingual */}

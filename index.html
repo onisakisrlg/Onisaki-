@@ -60,11 +60,24 @@
         }
       }
     </script>
+    <script>
+      // Immediate execution to set background color before paint to avoid flash
+      (function() {
+        try {
+          const hour = new Date().getHours();
+          // Light mode between 6 AM and 6 PM
+          const isLight = hour >= 6 && hour < 18;
+          if (isLight) {
+            document.documentElement.style.backgroundColor = '#f3f4f6';
+          } else {
+            document.documentElement.style.backgroundColor = '#0b0c15';
+          }
+        } catch (e) {}
+      })();
+    </script>
     <style>
       body {
-        /* Default to dark mode colors initially to prevent flash, controlled by React later */
-        background-color: #0b0c15; 
-        color: #ffffff;
+        /* Base styles */
         overflow-x: hidden;
         cursor: none; /* Hide default cursor */
         transition: background-color 0.5s ease, color 0.5s ease;

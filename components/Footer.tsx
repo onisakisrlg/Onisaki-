@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Logo } from './ui/Logo';
 
 export const Footer: React.FC = () => {
   return (
@@ -7,8 +8,8 @@ export const Footer: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8 mb-12">
            <div className="col-span-1 md:col-span-1 flex flex-col items-center md:items-start">
-              <div className="text-2xl font-serif font-bold text-white mb-4 tracking-widest">
-                ONISAKI
+              <div className="mb-6 scale-90 origin-center md:origin-left">
+                <Logo className="w-12 h-12" />
               </div>
               <p className="text-gray-500 text-xs leading-relaxed max-w-xs mx-auto md:mx-0">
                 Empowering businesses through future-proof digital solutions.

@@ -13,7 +13,13 @@ import { DxDemoPage } from './components/DxDemoPage';
 import { MobileDemoPage } from './components/MobileDemoPage';
 
 function App() {
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+  // Automatically determine theme based on local time
+  // 6:00 AM to 6:00 PM (18:00) -> Light Mode
+  // Otherwise -> Dark Mode
+  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
+    const hour = new Date().getHours();
+    return (hour >= 6 && hour < 18) ? 'light' : 'dark';
+  });
 
   const toggleTheme = () => {
     setTheme(prev => prev === 'dark' ? 'light' : 'dark');
