@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ONISAKI | Creative Web Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class', // Enable class-based dark mode
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['Cinzel', 'serif'],
+              // Changed sans to Cinzel as requested to unify fonts globally
+              sans: ['Cinzel', 'serif'], 
+            },
+            colors: {
+              'oni-bg': '#0b0c15', // Deep Midnight Blue (Dark Mode BG)
+              'oni-light-bg': '#f3f4f6', // Light Gray (Light Mode BG)
+              'oni-card': '#131520', 
+              'oni-light-card': '#ffffff',
+              'oni-cyan': '#00f0ff', 
+              'oni-magenta': '#ff00aa', 
+              'oni-purple': '#bd00ff', 
+            },
+            backgroundImage: {
+              'gradient-neon': 'linear-gradient(to right, #00f0ff, #bd00ff, #ff00aa)',
+            },
+            animation: {
+              'snake-h-pos': 'snakeHPos 2s linear infinite',
+              'snake-h-neg': 'snakeHNeg 2s linear infinite',
+              'snake-v-pos': 'snakeVPos 2s linear infinite',
+              'snake-v-neg': 'snakeVNeg 2s linear infinite',
+            },
+            keyframes: {
+              // Move from -100% to 100% in first 50% of time, then wait.
+              // This allows the next segment to pick up exactly when this one finishes visible area.
+              snakeHPos: {
+                '0%': { transform: 'translateX(-100%)' },
+                '50%, 100%': { transform: 'translateX(100%)' },
+              },
+              snakeHNeg: {
+                '0%': { transform: 'translateX(100%)' },
+                '50%, 100%': { transform: 'translateX(-100%)' },
+              },
+              snakeVPos: {
+                '0%': { transform: 'translateY(-100%)' },
+                '50%, 100%': { transform: 'translateY(100%)' },
+              },
+              snakeVNeg: {
+                '0%': { transform: 'translateY(100%)' },
+                '50%, 100%': { transform: 'translateY(-100%)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        /* Default to dark mode colors initially to prevent flash, controlled by React later */
+        background-color: #0b0c15; 
+        color: #ffffff;
+        overflow-x: hidden;
+        cursor: none; /* Hide default cursor */
+        transition: background-color 0.5s ease, color 0.5s ease;
+        font-family: 'Cinzel', serif; /* Force global font */
+        font-weight: 600; /* Force bold weight globally */
+      }
+      
+      /* Mobile fallback */
+      @media (hover: none) and (pointer: coarse) {
+        body {
+          cursor: auto;
+        }
+      }
+
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+      
+      .loader-line {
+        animation: loading 1.5s ease-in-out infinite;
+      }
+      @keyframes loading {
+        0% { width: 0%; left: 0; }
+        50% { width: 100%; left: 0; }
+        100% { width: 0%; left: 100%; }
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0",
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
