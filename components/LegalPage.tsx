@@ -31,7 +31,7 @@ export const LegalPage: React.FC = () => {
       <div className="max-w-4xl mx-auto">
         <Reveal>
           <div className="mb-12">
-            <Link to="/" className="inline-flex items-center gap-2 text-oni-cyan hover:text-white transition-colors text-sm font-bold tracking-widest mb-8 group">
+            <Link to="/" state={{ targetSection: 'contact' }} className="inline-flex items-center gap-2 text-oni-cyan hover:text-white transition-colors text-sm font-bold tracking-widest mb-8 group">
               <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
               BACK TO HOME
             </Link>

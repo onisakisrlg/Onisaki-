@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Section } from '../types';
 import { Reveal } from './ui/Reveal';
 import { OfficeAnim, PhoneAnim, MailAnim } from './ServiceAnimations';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, ArrowRight } from 'lucide-react';
 
 export const Concierge: React.FC = () => {
   return (
@@ -24,13 +25,24 @@ export const Concierge: React.FC = () => {
           </Reveal>
         </div>
 
+        {/* New Process Flow Button */}
+        <div className="flex justify-center mb-16">
+          <Reveal delay={0.1}>
+            <Link to="/process" className="group relative inline-flex items-center gap-3 px-8 py-3 bg-black/5 dark:bg-white/5 border border-oni-cyan/30 rounded-full overflow-hidden hover:border-oni-cyan transition-colors duration-300">
+               <span className="absolute inset-0 bg-oni-cyan/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
+               <span className="relative text-sm font-bold tracking-widest text-gray-800 dark:text-white">開発の流れを見る (PROCESS)</span>
+               <ArrowRight size={16} className="relative text-oni-cyan group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </Reveal>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
           
           {/* Office Card */}
           <Reveal delay={0} width="100%">
             <div className="group h-full bg-white/80 dark:bg-oni-card/80 backdrop-blur-md p-6 md:p-8 border border-black/5 dark:border-white/5 rounded-2xl flex flex-col items-center text-center relative overflow-hidden transition-all duration-500 shadow-lg dark:shadow-none hover:-translate-y-2">
               
-              {/* === BORDER LAYERS REMOVED FOR BREVITY IN DIFF, ASSUME SAME STYLE AS COLLECTION === */}
+              {/* === BORDER LAYERS === */}
               <div className="absolute inset-0 z-0 pointer-events-none rounded-2xl overflow-hidden">
                   <span className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent to-oni-cyan -translate-x-full group-hover:animate-snake-h-pos" />
                   <span className="absolute top-0 right-0 w-[3px] h-full bg-gradient-to-b from-transparent to-oni-cyan -translate-y-full group-hover:animate-snake-v-pos" style={{ animationDelay: '0.5s' }} />

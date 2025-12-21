@@ -4,6 +4,13 @@ import { InteractiveBackground } from './components/InteractiveBackground';
 import { CustomCursor } from './components/ui/CustomCursor';
 import { MainLayout } from './components/MainLayout';
 import { LegalPage } from './components/LegalPage';
+import { ProcessPage } from './components/ProcessPage';
+import { WebDemoPage } from './components/WebDemoPage';
+import { EcDemoPage } from './components/EcDemoPage';
+import { UiUxDemoPage } from './components/UiUxDemoPage';
+import { GameDemoPage } from './components/GameDemoPage';
+import { DxDemoPage } from './components/DxDemoPage';
+import { MobileDemoPage } from './components/MobileDemoPage';
 
 function App() {
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
@@ -24,6 +31,15 @@ function App() {
           <Routes>
             <Route path="/" element={<MainLayout theme={theme} toggleTheme={toggleTheme} />} />
             <Route path="/legal" element={<LegalPage />} />
+            <Route path="/process" element={<ProcessPage />} />
+            
+            {/* Demos */}
+            <Route path="/web-demo" element={<WebDemoPage />} />
+            <Route path="/ec-demo" element={<EcDemoPage />} />
+            <Route path="/ui-demo" element={<UiUxDemoPage />} />
+            <Route path="/game-demo" element={<GameDemoPage />} />
+            <Route path="/dx-demo" element={<DxDemoPage />} />
+            <Route path="/mobile-demo" element={<MobileDemoPage />} />
           </Routes>
         </div>
       </div>

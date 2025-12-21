@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Navbar } from './Navbar';
 import { Hero } from './Hero';
 import { Philosophy } from './Philosophy';
@@ -16,6 +17,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ theme, toggleTheme }) =>
   const [activeSection, setActiveSection] = useState<Section>(Section.HERO);
   // Flag to prevent scroll listener from overriding click navigation momentarily
   const [isScrollingTo, setIsScrollingTo] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,6 +50,17 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ theme, toggleTheme }) =>
     handleScroll(); // Initial check on mount
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isScrollingTo]);
+
+  // Handle auto-scroll when returning from other pages
+  useEffect(() => {
+    if (location.state && (location.state as any).targetSection) {
+      const section = (location.state as any).targetSection;
+      // Slight delay to ensure DOM render
+      setTimeout(() => {
+        scrollToSection(section);
+      }, 100);
+    }
+  }, [location]);
 
   const scrollToSection = (section: Section) => {
     setIsScrollingTo(true);

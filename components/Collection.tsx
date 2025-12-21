@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Section, ServiceItem } from '../types';
 import { Reveal } from './ui/Reveal';
 import { ArrowRight } from 'lucide-react';
@@ -73,9 +74,10 @@ export const Collection: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          {SERVICES.map((service, index) => (
-            <Reveal key={service.id} delay={index * 0.1}>
-              <div className="group relative bg-white/80 dark:bg-oni-card/80 p-6 md:p-10 h-full border border-black/5 dark:border-white/5 transition-all duration-500 backdrop-blur-md flex flex-col justify-between overflow-hidden rounded-xl shadow-lg dark:shadow-none hover:-translate-y-2">
+          {SERVICES.map((service, index) => {
+            
+            const CardContent = (
+              <div className="group relative bg-white/80 dark:bg-oni-card/80 p-6 md:p-10 h-full border border-black/5 dark:border-white/5 transition-all duration-500 backdrop-blur-md flex flex-col justify-between overflow-hidden rounded-xl shadow-lg dark:shadow-none hover:-translate-y-2 cursor-pointer">
                 
                 {/* 
                    =======================
@@ -122,12 +124,32 @@ export const Collection: React.FC = () => {
                 </div>
                  
                 <div className="relative z-10 flex items-center gap-2 text-gray-800 dark:text-white text-[10px] md:text-xs font-bold tracking-widest uppercase group-hover:text-oni-magenta transition-colors mt-auto">
-                   <span>Learn More</span>
+                   <span>View Interactive Demo</span>
                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
-            </Reveal>
-          ))}
+            );
+
+            // Determine link destination based on Service ID
+            let linkTo = "";
+            switch(service.id) {
+              case '1': linkTo = "/web-demo"; break;
+              case '2': linkTo = "/ec-demo"; break;
+              case '3': linkTo = "/ui-demo"; break;
+              case '4': linkTo = "/game-demo"; break;
+              case '5': linkTo = "/dx-demo"; break;
+              case '6': linkTo = "/mobile-demo"; break;
+              default: linkTo = "/";
+            }
+
+            return (
+              <Reveal key={service.id} delay={index * 0.1}>
+                 <Link to={linkTo} className="block h-full">
+                   {CardContent}
+                 </Link>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>

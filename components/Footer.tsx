@@ -18,18 +18,48 @@ export const Footer: React.FC = () => {
            <div className="col-span-1">
              <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-wider">Services</h4>
              <ul className="text-gray-500 text-xs space-y-2">
-               <li className="hover:text-oni-cyan cursor-pointer transition-colors">WEB Development</li>
-               <li className="hover:text-oni-cyan cursor-pointer transition-colors">EC Construction</li>
-               <li className="hover:text-oni-cyan cursor-pointer transition-colors">UI/UX Design</li>
+               <li>
+                 <Link to="/web-demo" className="hover:text-oni-cyan transition-colors">
+                   WEB Development
+                 </Link>
+               </li>
+               <li>
+                 <Link to="/ec-demo" className="hover:text-oni-cyan transition-colors">
+                   EC Construction
+                 </Link>
+               </li>
+               <li>
+                 <Link to="/ui-demo" className="hover:text-oni-cyan transition-colors">
+                   UI/UX Design
+                 </Link>
+               </li>
+               <li>
+                 <Link to="/game-demo" className="hover:text-oni-cyan transition-colors">
+                   Game Development
+                 </Link>
+               </li>
+               <li>
+                 <Link to="/dx-demo" className="hover:text-oni-cyan transition-colors">
+                   System Optimization (DX)
+                 </Link>
+               </li>
+               <li>
+                 <Link to="/mobile-demo" className="hover:text-oni-cyan transition-colors">
+                   Mobile Application
+                 </Link>
+               </li>
              </ul>
            </div>
 
            <div className="col-span-1">
              <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-wider">Company</h4>
              <ul className="text-gray-500 text-xs space-y-2">
-               <li className="hover:text-oni-cyan cursor-pointer transition-colors">About Us</li>
+               <li>
+                  <Link to="/process" className="hover:text-oni-cyan transition-colors">
+                    ご依頼の流れ
+                  </Link>
+               </li>
                <li className="hover:text-oni-cyan cursor-pointer transition-colors">Careers</li>
-               <li className="hover:text-oni-cyan cursor-pointer transition-colors">Privacy Policy</li>
                <li>
                   <Link to="/legal" className="hover:text-oni-cyan transition-colors">
                     特定商取引法に基づく表記
