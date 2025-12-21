@@ -185,31 +185,39 @@ export const VisionAnim = () => {
       </svg>
 
 
-      {/* --- CENTRAL CORE --- */}
-      <div className="absolute z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 md:w-48 md:h-48 flex items-center justify-center">
+      {/* --- CENTRAL CORE: Cyber Seal (Hanko) Style --- */}
+      <div className="absolute z-20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 md:w-56 md:h-56 flex items-center justify-center">
          
-         <div className="relative w-24 h-24 md:w-36 md:h-36 bg-black/80 dark:bg-[#0b0c15]/90 backdrop-blur-xl rounded-full border border-oni-cyan/30 shadow-[0_0_60px_rgba(0,240,255,0.2)] flex flex-col items-center justify-center z-20 overflow-hidden">
+         {/* The Seal Container */}
+         <div className="relative w-32 h-32 md:w-44 md:h-44 rounded-full border-[3px] border-double border-oni-cyan shadow-[0_0_40px_rgba(0,240,255,0.3)] bg-black/90 backdrop-blur-xl flex items-center justify-center overflow-hidden group">
             
-            {/* Background Texture inside Core */}
-            <div className="absolute inset-0 opacity-30">
-                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,240,255,0.4)_0%,transparent_70%)] animate-pulse"></div>
+            {/* Inner Wall Glowing Text - Rotating */}
+            <div className="absolute inset-0 animate-[spin_20s_linear_infinite]">
+              <svg viewBox="0 0 200 200" className="w-full h-full">
+                <defs>
+                   <path id="textCircle" d="M 100, 100 m -82, 0 a 82,82 0 1,1 164,0 a 82,82 0 1,1 -164,0" />
+                </defs>
+                <text fill="rgba(0,240,255,0.8)" fontSize="16" fontWeight="bold" letterSpacing="6" fontFamily="Cinzel, serif">
+                  <textPath href="#textCircle" startOffset="0%" textLength="515">
+                    ONISAKI • CREATIVE • ONISAKI • CREATIVE •
+                  </textPath>
+                </text>
+              </svg>
             </div>
 
-            {/* Floating Text Container */}
-            {/* Added custom float animation via style since Tailwind animate-bounce is too harsh */}
-            <div className="relative z-10 text-center animate-[float_6s_ease-in-out_infinite]">
-                <h3 className="text-xl md:text-2xl font-serif font-bold text-white tracking-widest drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]">
-                ONISAKI
-                </h3>
-                <p className="text-oni-cyan text-[9px] md:text-[10px] font-bold tracking-[0.3em] font-sans mt-1 opacity-80">
-                株式会社
-                </p>
-            </div>
+            {/* Decorative Inner Ring (Static) */}
+            <div className="absolute inset-2 rounded-full border border-oni-purple/30 pointer-events-none"></div>
+            
+            {/* Center Glow Pulse */}
+            <div className="absolute inset-0 bg-oni-cyan/5 animate-pulse pointer-events-none"></div>
+            
+            {/* Small Geometric Core Anchor */}
+            <div className="absolute w-3 h-3 md:w-4 md:h-4 bg-oni-magenta rotate-45 animate-pulse shadow-[0_0_15px_rgba(255,0,170,1)]"></div>
          </div>
          
-         {/* Outer Slow Rings */}
-         <div className="absolute inset-[-10px] border border-oni-cyan/20 rounded-full animate-[spin_20s_linear_infinite]"></div>
-         <div className="absolute inset-[-20px] border border-oni-magenta/10 rounded-full animate-[spin_30s_linear_infinite_reverse]"></div>
+         {/* Outer Decorative Rings (Slow Counter-Spin) */}
+         <div className="absolute inset-[-15px] border border-dashed border-oni-cyan/20 rounded-full animate-[spin_40s_linear_infinite_reverse]"></div>
+         <div className="absolute inset-[-5px] border border-oni-magenta/20 rounded-full animate-[spin_10s_linear_infinite]"></div>
       </div>
 
 
@@ -268,16 +276,6 @@ export const VisionAnim = () => {
           );
         })}
       </div>
-      
-      {/* Custom Keyframe for Float */}
-      <style>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0) translateX(0); }
-          25% { transform: translateY(-3px) translateX(2px); }
-          50% { transform: translateY(0) translateX(0); }
-          75% { transform: translateY(3px) translateX(-2px); }
-        }
-      `}</style>
     </div>
   );
 };

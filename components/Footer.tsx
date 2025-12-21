@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-black py-12 border-t border-white/5 relative z-20">
+    <footer className="bg-black py-10 md:py-12 border-t border-white/5 relative z-20 text-center md:text-left">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
-           <div className="col-span-1 md:col-span-1">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8 mb-12">
+           <div className="col-span-1 md:col-span-1 flex flex-col items-center md:items-start">
               <div className="text-2xl font-serif font-bold text-white mb-4 tracking-widest">
                 ONISAKI
               </div>
-              <p className="text-gray-500 text-xs leading-relaxed">
+              <p className="text-gray-500 text-xs leading-relaxed max-w-xs mx-auto md:mx-0">
                 Empowering businesses through future-proof digital solutions.
               </p>
            </div>
