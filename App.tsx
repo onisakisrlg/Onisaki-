@@ -5,6 +5,7 @@ import { CustomCursor } from './components/ui/CustomCursor';
 import { MainLayout } from './components/MainLayout';
 import { LegalPage } from './components/LegalPage';
 import { ProcessPage } from './components/ProcessPage';
+import { PrivacyPolicyPage } from './components/PrivacyPolicyPage';
 import { WebDemoPage } from './components/WebDemoPage';
 import { EcDemoPage } from './components/EcDemoPage';
 import { UiUxDemoPage } from './components/UiUxDemoPage';
@@ -38,6 +39,7 @@ function App() {
             <Route path="/" element={<MainLayout theme={theme} toggleTheme={toggleTheme} />} />
             <Route path="/legal" element={<LegalPage />} />
             <Route path="/process" element={<ProcessPage />} />
+            <Route path="/privacy" element={<PrivacyPolicyPage />} />
             
             {/* Demos */}
             <Route path="/web-demo" element={<WebDemoPage />} />

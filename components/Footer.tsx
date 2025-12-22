@@ -21,32 +21,32 @@ export const Footer: React.FC = () => {
              <ul className="text-gray-500 text-xs space-y-2">
                <li>
                  <Link to="/web-demo" className="hover:text-oni-cyan transition-colors">
-                   WEB Development
+                   WEB開発
                  </Link>
                </li>
                <li>
                  <Link to="/ec-demo" className="hover:text-oni-cyan transition-colors">
-                   EC Construction
+                   EC構築
                  </Link>
                </li>
                <li>
                  <Link to="/ui-demo" className="hover:text-oni-cyan transition-colors">
-                   UI/UX Design
+                   UI/UXデザイン
                  </Link>
                </li>
                <li>
                  <Link to="/game-demo" className="hover:text-oni-cyan transition-colors">
-                   Game Development
+                   ゲーム開発
                  </Link>
                </li>
                <li>
                  <Link to="/dx-demo" className="hover:text-oni-cyan transition-colors">
-                   System Optimization (DX)
+                   業務DX支援
                  </Link>
                </li>
                <li>
                  <Link to="/mobile-demo" className="hover:text-oni-cyan transition-colors">
-                   Mobile Application
+                   アプリ開発
                  </Link>
                </li>
              </ul>
@@ -64,6 +64,11 @@ export const Footer: React.FC = () => {
                <li>
                   <Link to="/legal" className="hover:text-oni-cyan transition-colors">
                     特定商取引法に基づく表記
+                  </Link>
+               </li>
+               <li>
+                  <Link to="/privacy" className="hover:text-oni-cyan transition-colors">
+                    プライバシーポリシー
                   </Link>
                </li>
              </ul>

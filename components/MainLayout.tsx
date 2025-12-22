@@ -89,7 +89,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ theme, toggleTheme }) =>
       <main className="relative z-10">
         <Hero scrollToSection={scrollToSection} />
         <Philosophy /> 
-        <Collection /> 
+        <Collection />
         <Concierge />  
       </main>
 
