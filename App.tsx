@@ -12,6 +12,7 @@ import { UiUxDemoPage } from './components/UiUxDemoPage';
 import { GameDemoPage } from './components/GameDemoPage';
 import { DxDemoPage } from './components/DxDemoPage';
 import { MobileDemoPage } from './components/MobileDemoPage';
+import { AffiliatePage } from './components/AffiliatePage';
 
 function App() {
   // Automatically determine theme based on local time
@@ -40,6 +41,7 @@ function App() {
             <Route path="/legal" element={<LegalPage />} />
             <Route path="/process" element={<ProcessPage />} />
             <Route path="/privacy" element={<PrivacyPolicyPage />} />
+            <Route path="/recommendations" element={<AffiliatePage />} />
             
             {/* Demos */}
             <Route path="/web-demo" element={<WebDemoPage />} />

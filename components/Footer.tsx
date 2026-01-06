@@ -75,7 +75,18 @@ export const Footer: React.FC = () => {
            </div>
 
            <div className="col-span-1">
-             <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-wider">Office</h4>
+             <h4 className="text-white font-bold mb-4 text-sm uppercase tracking-wider">Resources</h4>
+             <ul className="text-gray-500 text-xs space-y-2">
+               <li>
+                 <Link to="/recommendations" className="hover:text-oni-cyan transition-colors flex items-center justify-center md:justify-start gap-2">
+                   <span>Onisaki Selects</span>
+                   <span className="bg-oni-cyan/20 text-oni-cyan px-1.5 py-0.5 rounded text-[9px] font-bold">NEW</span>
+                 </Link>
+                 <span className="block text-[10px] text-gray-600 mt-0.5">厳選ガジェット・書籍</span>
+               </li>
+             </ul>
+             
+             <h4 className="text-white font-bold mt-8 mb-4 text-sm uppercase tracking-wider">Office</h4>
              <p className="text-gray-500 text-xs leading-relaxed">
                104-0061<br/>
                東京都中央区銀座１-２２-１１<br/>
