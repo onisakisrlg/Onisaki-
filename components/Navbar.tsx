@@ -81,6 +81,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, scrollToSection, 
             <span>Services</span>
             <span className="text-[10px] opacity-50 group-hover:opacity-100 transition-opacity font-normal tracking-normal mt-0.5">事業内容</span>
           </button>
+          <button onClick={() => scrollToSection(Section.WORKS)} className={linkClasses(Section.WORKS)}>
+            <span>Works</span>
+            <span className="text-[10px] opacity-50 group-hover:opacity-100 transition-opacity font-normal tracking-normal mt-0.5">制作実績</span>
+          </button>
           <button onClick={() => scrollToSection(Section.CONTACT)} className={linkClasses(Section.CONTACT)}>
             <span>Contact</span>
             <span className="text-[10px] opacity-50 group-hover:opacity-100 transition-opacity font-normal tracking-normal mt-0.5">お問い合わせ</span>
@@ -147,6 +151,13 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, scrollToSection, 
         <button onClick={() => { scrollToSection(Section.SERVICES); setIsMobileMenuOpen(false); }} className="relative group flex flex-col items-center gap-2 text-gray-900 dark:text-white transition-all transform hover:scale-110">
           <span className="text-3xl font-serif font-bold tracking-widest group-hover:text-oni-cyan transition-colors">Services</span>
           <span className="text-xs font-sans font-bold opacity-60 tracking-[0.2em] group-hover:text-oni-cyan transition-colors">事業内容</span>
+        </button>
+
+        <div className="w-12 h-[1px] bg-black/10 dark:bg-white/10"></div>
+
+        <button onClick={() => { scrollToSection(Section.WORKS); setIsMobileMenuOpen(false); }} className="relative group flex flex-col items-center gap-2 text-gray-900 dark:text-white transition-all transform hover:scale-110">
+          <span className="text-3xl font-serif font-bold tracking-widest group-hover:text-oni-cyan transition-colors">Works</span>
+          <span className="text-xs font-sans font-bold opacity-60 tracking-[0.2em] group-hover:text-oni-cyan transition-colors">制作実績</span>
         </button>
 
         <div className="w-12 h-[1px] bg-black/10 dark:bg-white/10"></div>
