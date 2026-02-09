@@ -20,11 +20,19 @@ const PROJECTS: Project[] = [
     title: '株式会社天馬',
     category: 'Corporate Website',
     description: 'A modern corporate website built with Next.js. Features responsive design, smooth animations, and optimized performance for a logistics and trading enterprise.',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop', // Placeholder image - replace with actual screenshot
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop', 
     link: 'https://tianma.vercel.app/',
     tags: ['Next.js', 'React', 'Tailwind CSS', 'Framer Motion']
   },
-  // Add more projects here in the future
+  {
+    id: '2',
+    title: '京辰株式会社',
+    category: 'Corporate Website',
+    description: 'A sleek, professional corporate identity site. Designed for clarity and trust, featuring fast load times and mobile-first responsiveness.',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2301&auto=format&fit=crop',
+    link: 'https://kyoshin.vercel.app/',
+    tags: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript']
+  }
 ];
 
 export const Works: React.FC = () => {
