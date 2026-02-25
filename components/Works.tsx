@@ -65,26 +65,26 @@ export const Works: React.FC = () => {
         {/* Compact List Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
           {PROJECTS.map((project, index) => (
-            <Reveal key={project.id} delay={index * 0.05}>
+            <Reveal key={project.id} delay={index * 0.05} width="100%">
               <a 
                 href={project.link} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group relative flex items-center justify-between p-6 bg-white dark:bg-white/5 border border-black/5 dark:border-white/10 rounded-xl overflow-hidden hover:border-oni-cyan/50 hover:shadow-[0_0_15px_rgba(0,240,255,0.1)] transition-all duration-300"
+                className="group relative flex items-center justify-between p-5 h-24 bg-white dark:bg-white/5 border border-black/5 dark:border-white/10 rounded-xl overflow-hidden hover:border-oni-cyan/50 hover:shadow-[0_0_15px_rgba(0,240,255,0.1)] transition-all duration-300 w-full"
               >
                 {/* Hover Gradient Background */}
                 <div className="absolute inset-0 bg-gradient-to-r from-oni-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-                <div className="relative z-10 flex flex-col">
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400 group-hover:text-oni-cyan transition-colors mb-1">
+                <div className="relative z-10 flex flex-col justify-center h-full min-w-0 flex-1 mr-4">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400 group-hover:text-oni-cyan transition-colors mb-1 truncate">
                     {project.category}
                   </span>
-                  <h3 className="text-lg font-bold font-serif text-gray-900 dark:text-white group-hover:text-oni-cyan transition-colors">
+                  <h3 className="text-lg font-bold font-serif text-gray-900 dark:text-white group-hover:text-oni-cyan transition-colors truncate">
                     {project.title}
                   </h3>
                 </div>
 
-                <div className="relative z-10 w-8 h-8 flex items-center justify-center rounded-full bg-black/5 dark:bg-white/10 group-hover:bg-oni-cyan group-hover:text-black transition-all duration-300 transform group-hover:rotate-45">
+                <div className="relative z-10 w-8 h-8 flex-shrink-0 flex items-center justify-center rounded-full bg-black/5 dark:bg-white/10 group-hover:bg-oni-cyan group-hover:text-black transition-all duration-300 transform group-hover:rotate-45">
                   <ArrowUpRight size={16} />
                 </div>
               </a>
