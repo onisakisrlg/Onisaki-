@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft } from 'lucide-react';
 import { Reveal } from './ui/Reveal';
+import { CipherText } from './ui/CipherText';
 
 export const LegalPage: React.FC = () => {
   useEffect(() => {
@@ -12,8 +13,14 @@ export const LegalPage: React.FC = () => {
     { label: '販売業者', value: 'Onisaki株式会社' },
     { label: '運営責任者', value: 'ソウニチラクガク' },
     { label: '所在地', value: '東京都中央区銀座１丁目２２番１１号 銀座大竹ビジデンス２Ｆ' },
-    { label: '電話番号', value: '050-6864-0984' },
-    { label: 'メールアドレス', value: 'support@onisaki.com' },
+    { 
+      label: '電話番号', 
+      value: <div className="flex items-center"><CipherText text="050" />-<CipherText text="6864" />-<CipherText text="0984" /></div> 
+    },
+    { 
+      label: 'メールアドレス', 
+      value: <div className="flex items-center"><CipherText text="support" />@<CipherText text="onisaki.com" /></div> 
+    },
     { label: '販売価格', value: '商品ごとに表示された価格（税込）。\n価格帯は500円〜1,000,000円です。' },
     { label: '商品代金以外の必要料金', value: '消費税、送料、振込手数料（銀行振込の場合）、代引手数料（代金引換の場合）など。詳細はご注文画面にてご確認ください。' },
     { label: 'お支払い方法', value: 'クレジットカード、銀行振込、コンビニ決済、代金引換、WeChat Pay（微信支付）、Alipay（支付宝）' },
@@ -54,9 +61,9 @@ export const LegalPage: React.FC = () => {
                   </h3>
                 </div>
                 <div className="md:col-span-8">
-                  <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed whitespace-pre-wrap">
+                  <div className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed whitespace-pre-wrap">
                     {item.value}
-                  </p>
+                  </div>
                 </div>
               </div>
             </Reveal>

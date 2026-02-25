@@ -13,8 +13,6 @@ import { GameDemoPage } from './components/GameDemoPage';
 import { DxDemoPage } from './components/DxDemoPage';
 import { MobileDemoPage } from './components/MobileDemoPage';
 import { AffiliatePage } from './components/AffiliatePage';
-import { ContactModal } from './components/ContactModal';
-import { FixedContactButton } from './components/FixedContactButton';
 import { AdminLogin } from './components/AdminLogin';
 import { AdminDashboard } from './components/AdminDashboard';
 
@@ -26,8 +24,6 @@ function App() {
     const hour = new Date().getHours();
     return (hour >= 6 && hour < 18) ? 'light' : 'dark';
   });
-
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   const toggleTheme = () => {
     setTheme(prev => prev === 'dark' ? 'light' : 'dark');
@@ -61,10 +57,6 @@ function App() {
             <Route path="/surilege" element={<AdminLogin />} />
             <Route path="/surilege/dashboard" element={<AdminDashboard />} />
           </Routes>
-
-          {/* Global Contact Components */}
-          <FixedContactButton onClick={() => setIsContactModalOpen(true)} />
-          <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
         </div>
       </div>
     </Router>

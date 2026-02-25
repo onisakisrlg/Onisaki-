@@ -5,7 +5,6 @@ import { Hero } from './Hero';
 import { Philosophy } from './Philosophy';
 import { Collection } from './Collection';
 import { Works } from './Works';
-import { Concierge } from './Concierge';
 import { Footer } from './Footer';
 import { Section } from '../types';
 
@@ -92,7 +91,6 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ theme, toggleTheme }) =>
         <Philosophy /> 
         <Collection />
         <Works />
-        <Concierge />  
       </main>
 
       <Footer />

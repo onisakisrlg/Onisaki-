@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft } from 'lucide-react';
 import { Reveal } from './ui/Reveal';
+import { CipherText } from './ui/CipherText';
 
 export const PrivacyPolicyPage: React.FC = () => {
   useEffect(() => {
@@ -94,7 +95,12 @@ export const PrivacyPolicyPage: React.FC = () => {
                    <div className="bg-black/5 dark:bg-white/5 p-4 rounded-lg border border-black/10 dark:border-white/10">
                       <p><strong>社名：</strong> Onisaki株式会社</p>
                       <p><strong>住所：</strong> 東京都中央区銀座１丁目２２番１１号 銀座大竹ビジデンス２Ｆ</p>
-                      <p><strong>メールアドレス：</strong> support@onisaki.com</p>
+                      <div className="flex items-center gap-1">
+                        <strong>メールアドレス：</strong> 
+                        <div className="flex items-center">
+                          <CipherText text="support" />@<CipherText text="onisaki.com" />
+                        </div>
+                      </div>
                    </div>
                 </div>
 
