@@ -1,17 +1,13 @@
 import React from 'react';
 import { Section } from '../types';
 import { Reveal } from './ui/Reveal';
-import { TiltCard } from './ui/TiltCard';
-import { ExternalLink, Tag, Globe, ArrowRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 interface Project {
   id: string;
   title: string;
   category: string;
-  description: string;
-  image: string;
   link: string;
-  tags: string[];
 }
 
 const PROJECTS: Project[] = [
@@ -19,37 +15,25 @@ const PROJECTS: Project[] = [
     id: '1',
     title: '株式会社天馬',
     category: 'Corporate Website',
-    description: 'A modern corporate website built with Next.js. Features responsive design, smooth animations, and optimized performance for a logistics and trading enterprise.',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop', 
     link: 'https://tianma.vercel.app/',
-    tags: ['Next.js', 'React', 'Tailwind CSS', 'Framer Motion']
   },
   {
     id: '2',
     title: '京辰株式会社',
     category: 'Corporate Website',
-    description: 'A sleek, professional corporate identity site. Designed for clarity and trust, featuring fast load times and mobile-first responsiveness.',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2301&auto=format&fit=crop',
     link: 'https://kyoshin.vercel.app/',
-    tags: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript']
   },
   {
     id: '3',
-    title: 'Rainbow Passport',
+    title: 'Rainbow Passport 合同会社',
     category: 'Service Website',
-    description: 'Official website for Rainbow Passport in Ginza. A modern, responsive SPA designed to showcase the brand\'s premium services and membership details with elegance.',
-    image: 'https://images.unsplash.com/photo-1559536859-36779434d227?q=80&w=2670&auto=format&fit=crop',
     link: 'https://rpginza.com/',
-    tags: ['React', 'SPA', 'Tailwind CSS', 'Responsive']
   },
   {
     id: '4',
     title: '建誠株式会社',
     category: 'Corporate Website',
-    description: 'Official website for Kensei Corporation, specializing in interior construction and renovation. Features a clean, professional design highlighting their services and expertise.',
-    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2531&auto=format&fit=crop',
     link: 'https://kensei-jp.vercel.app/',
-    tags: ['React', 'Tailwind CSS', 'Corporate', 'Responsive']
   }
 ];
 
@@ -64,91 +48,52 @@ export const Works: React.FC = () => {
       <div className="container mx-auto px-6">
         
         {/* Header */}
-        <div className="text-center mb-16 space-y-4">
+        <div className="text-center mb-12 space-y-4">
           <Reveal width="100%">
             <h2 className="flex flex-col items-center justify-center gap-2">
-              <span className="text-3xl md:text-6xl font-serif font-bold text-gray-900 dark:text-white transition-colors duration-500 tracking-wide">
+              <span className="text-3xl md:text-5xl font-serif font-bold text-gray-900 dark:text-white transition-colors duration-500 tracking-wide">
                 Selected Works
               </span>
-              <span className="text-lg md:text-2xl text-oni-purple font-bold tracking-[0.3em] font-sans mt-2 relative">
+              <span className="text-sm md:text-lg text-oni-purple font-bold tracking-[0.3em] font-sans mt-2 relative">
                 <span className="absolute inset-0 blur-md bg-oni-purple/20 rounded-full"></span>
                 <span className="relative">制作実績</span>
               </span>
             </h2>
-            <div className="w-16 h-1 bg-gradient-to-r from-oni-cyan to-oni-purple mx-auto rounded-full mt-6"></div>
           </Reveal>
         </div>
 
-        {/* Project Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Compact List Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
           {PROJECTS.map((project, index) => (
-            <Reveal key={project.id} delay={index * 0.1}>
-              <TiltCard className="h-full">
-                <a 
-                  href={project.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="group block h-full bg-white/80 dark:bg-oni-card/80 backdrop-blur-md border border-black/5 dark:border-white/5 rounded-2xl overflow-hidden hover:border-oni-cyan/50 hover:shadow-[0_0_30px_rgba(0,240,255,0.15)] transition-all duration-500"
-                >
-                  {/* Image Container */}
-                  <div className="relative h-48 md:h-56 overflow-hidden border-b border-black/5 dark:border-white/5">
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
-                    <img 
-                      src={project.image} 
-                      alt={project.title} 
-                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                    />
-                    
-                    {/* Overlay Badge */}
-                    <div className="absolute top-4 left-4 z-20">
-                      <span className="px-3 py-1 bg-black/80 backdrop-blur-sm text-oni-cyan text-[10px] font-bold uppercase tracking-widest rounded border border-oni-cyan/30">
-                        {project.category}
-                      </span>
-                    </div>
+            <Reveal key={project.id} delay={index * 0.05}>
+              <a 
+                href={project.link} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group relative flex items-center justify-between p-6 bg-white dark:bg-white/5 border border-black/5 dark:border-white/10 rounded-xl overflow-hidden hover:border-oni-cyan/50 hover:shadow-[0_0_15px_rgba(0,240,255,0.1)] transition-all duration-300"
+              >
+                {/* Hover Gradient Background */}
+                <div className="absolute inset-0 bg-gradient-to-r from-oni-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-                    {/* Hover Link Overlay */}
-                    <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
-                      <div className="flex items-center gap-2 text-white font-bold tracking-widest uppercase border border-white/30 px-6 py-2 rounded-full backdrop-blur-md">
-                        Visit Site <ExternalLink size={14} />
-                      </div>
-                    </div>
-                  </div>
+                <div className="relative z-10 flex flex-col">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400 group-hover:text-oni-cyan transition-colors mb-1">
+                    {project.category}
+                  </span>
+                  <h3 className="text-lg font-bold font-serif text-gray-900 dark:text-white group-hover:text-oni-cyan transition-colors">
+                    {project.title}
+                  </h3>
+                </div>
 
-                  {/* Content */}
-                  <div className="p-6 md:p-8">
-                    <div className="flex justify-between items-start mb-4">
-                      <h3 className="text-xl md:text-2xl font-bold font-serif text-gray-900 dark:text-white group-hover:text-oni-cyan transition-colors">
-                        {project.title}
-                      </h3>
-                      <Globe size={18} className="text-gray-400 group-hover:text-oni-cyan transition-colors" />
-                    </div>
-
-                    <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3">
-                      {project.description}
-                    </p>
-
-                    {/* Tech Stack Tags */}
-                    <div className="flex flex-wrap gap-2 mt-auto">
-                      {project.tags.map(tag => (
-                        <span key={tag} className="flex items-center gap-1 text-[10px] font-bold text-gray-500 dark:text-gray-400 bg-black/5 dark:bg-white/5 px-2 py-1 rounded border border-transparent group-hover:border-white/10 transition-colors">
-                          <Tag size={10} />
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    
-                    <div className="mt-6 pt-6 border-t border-black/5 dark:border-white/5 flex items-center justify-end text-oni-purple text-xs font-bold uppercase tracking-widest group-hover:translate-x-2 transition-transform">
-                      View Project <ArrowRight size={14} className="ml-2" />
-                    </div>
-                  </div>
-                </a>
-              </TiltCard>
+                <div className="relative z-10 w-8 h-8 flex items-center justify-center rounded-full bg-black/5 dark:bg-white/10 group-hover:bg-oni-cyan group-hover:text-black transition-all duration-300 transform group-hover:rotate-45">
+                  <ArrowUpRight size={16} />
+                </div>
+              </a>
             </Reveal>
           ))}
         </div>
         
         {/* Placeholder for future expansion */}
-        <div className="mt-16 text-center">
+        <div className="mt-12 text-center">
             <p className="text-xs text-gray-500 uppercase tracking-widest">
                More projects coming soon
             </p>
