@@ -8,6 +8,7 @@ interface Project {
   title: string;
   category: string;
   link: string;
+  keywords: string[];
 }
 
 const PROJECTS: Project[] = [
@@ -16,24 +17,28 @@ const PROJECTS: Project[] = [
     title: '株式会社天馬',
     category: 'Corporate Website',
     link: 'https://tianma.vercel.app/',
+    keywords: ['物流', '貿易', 'グローバル']
   },
   {
     id: '2',
     title: '京辰株式会社',
     category: 'Corporate Website',
     link: 'https://kyoshin.vercel.app/',
+    keywords: ['不動産', '投資', 'コンサルティング']
   },
   {
     id: '3',
     title: 'Rainbow Passport 合同会社',
     category: 'Service Website',
     link: 'https://rpginza.com/',
+    keywords: ['会員制', 'コンシェルジュ', 'ライフスタイル']
   },
   {
     id: '4',
     title: '建誠株式会社',
     category: 'Corporate Website',
     link: 'https://kensei-jp.vercel.app/',
+    keywords: ['内装工事', 'リノベーション', '原状回復']
   }
 ];
 
@@ -70,7 +75,7 @@ export const Works: React.FC = () => {
                 href={project.link} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group relative flex items-center justify-between p-5 h-24 bg-white dark:bg-white/5 border border-black/5 dark:border-white/10 rounded-xl overflow-hidden hover:border-oni-cyan/50 hover:shadow-[0_0_15px_rgba(0,240,255,0.1)] transition-all duration-300 w-full"
+                className="group relative flex items-center justify-between p-5 h-32 bg-white dark:bg-white/5 border border-black/5 dark:border-white/10 rounded-xl overflow-hidden hover:border-oni-cyan/50 hover:shadow-[0_0_15px_rgba(0,240,255,0.1)] transition-all duration-300 w-full"
               >
                 {/* Hover Gradient Background */}
                 <div className="absolute inset-0 bg-gradient-to-r from-oni-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -79,12 +84,21 @@ export const Works: React.FC = () => {
                   <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400 group-hover:text-oni-cyan transition-colors mb-1 truncate">
                     {project.category}
                   </span>
-                  <h3 className="text-lg font-bold font-serif text-gray-900 dark:text-white group-hover:text-oni-cyan transition-colors truncate">
+                  <h3 className="text-lg font-bold font-serif text-gray-900 dark:text-white group-hover:text-oni-cyan transition-colors truncate mb-3">
                     {project.title}
                   </h3>
+                  
+                  {/* Keywords */}
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.keywords.map((keyword, i) => (
+                      <span key={i} className="text-[9px] px-1.5 py-0.5 rounded border border-black/10 dark:border-white/10 text-gray-500 dark:text-gray-400 bg-black/5 dark:bg-white/5 whitespace-nowrap">
+                        #{keyword}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
-                <div className="relative z-10 w-8 h-8 flex-shrink-0 flex items-center justify-center rounded-full bg-black/5 dark:bg-white/10 group-hover:bg-oni-cyan group-hover:text-black transition-all duration-300 transform group-hover:rotate-45">
+                <div className="relative z-10 w-8 h-8 flex-shrink-0 flex items-center justify-center rounded-full bg-black/5 dark:bg-white/10 group-hover:bg-oni-cyan group-hover:text-black transition-all duration-300 transform group-hover:rotate-45 self-start mt-1">
                   <ArrowUpRight size={16} />
                 </div>
               </a>
