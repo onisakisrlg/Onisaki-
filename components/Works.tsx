@@ -42,6 +42,12 @@ const PROJECTS: Project[] = [
   }
 ];
 
+const KEYWORD_COLORS = [
+  'text-oni-cyan border-oni-cyan/30 bg-oni-cyan/5',
+  'text-oni-purple border-oni-purple/30 bg-oni-purple/5',
+  'text-oni-magenta border-oni-magenta/30 bg-oni-magenta/5'
+];
+
 export const Works: React.FC = () => {
   return (
     <section id={Section.WORKS} className="py-16 md:py-24 bg-oni-light-bg dark:bg-oni-bg relative z-10 border-t border-black/5 dark:border-white/5 transition-colors duration-500">
@@ -75,7 +81,7 @@ export const Works: React.FC = () => {
                 href={project.link} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group relative flex items-center justify-between p-5 h-32 bg-white dark:bg-white/5 border border-black/5 dark:border-white/10 rounded-xl overflow-hidden hover:border-oni-cyan/50 hover:shadow-[0_0_15px_rgba(0,240,255,0.1)] transition-all duration-300 w-full"
+                className="group relative flex items-center justify-between p-5 h-36 bg-white dark:bg-white/5 border border-black/5 dark:border-white/10 rounded-xl overflow-hidden hover:border-oni-cyan/50 hover:shadow-[0_0_15px_rgba(0,240,255,0.1)] transition-all duration-300 w-full"
               >
                 {/* Hover Gradient Background */}
                 <div className="absolute inset-0 bg-gradient-to-r from-oni-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -89,9 +95,9 @@ export const Works: React.FC = () => {
                   </h3>
                   
                   {/* Keywords */}
-                  <div className="flex flex-wrap gap-1.5">
+                  <div className="flex flex-wrap gap-2">
                     {project.keywords.map((keyword, i) => (
-                      <span key={i} className="text-[9px] px-1.5 py-0.5 rounded border border-black/10 dark:border-white/10 text-gray-500 dark:text-gray-400 bg-black/5 dark:bg-white/5 whitespace-nowrap">
+                      <span key={i} className={`text-xs font-bold px-2 py-1 rounded border ${KEYWORD_COLORS[i % KEYWORD_COLORS.length]} whitespace-nowrap`}>
                         #{keyword}
                       </span>
                     ))}
