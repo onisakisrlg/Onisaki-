@@ -32,6 +32,24 @@ const PROJECTS: Project[] = [
     image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2301&auto=format&fit=crop',
     link: 'https://kyoshin.vercel.app/',
     tags: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript']
+  },
+  {
+    id: '3',
+    title: 'Rainbow Passport',
+    category: 'Service Website',
+    description: 'Official website for Rainbow Passport in Ginza. A modern, responsive SPA designed to showcase the brand\'s premium services and membership details with elegance.',
+    image: 'https://images.unsplash.com/photo-1559536859-36779434d227?q=80&w=2670&auto=format&fit=crop',
+    link: 'https://rpginza.com/',
+    tags: ['React', 'SPA', 'Tailwind CSS', 'Responsive']
+  },
+  {
+    id: '4',
+    title: '建誠株式会社',
+    category: 'Corporate Website',
+    description: 'Official website for Kensei Corporation, specializing in interior construction and renovation. Features a clean, professional design highlighting their services and expertise.',
+    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2531&auto=format&fit=crop',
+    link: 'https://kensei-jp.vercel.app/',
+    tags: ['React', 'Tailwind CSS', 'Corporate', 'Responsive']
   }
 ];
 
