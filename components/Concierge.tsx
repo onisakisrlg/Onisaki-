@@ -125,19 +125,6 @@ export const Concierge: React.FC = () => {
                   <Mail size={18} />
                   Send Email
                 </a>
-
-                {/* WeChat Section */}
-                <div className="mt-8 pt-6 border-t border-white/10">
-                  <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/5 hover:border-[#07C160]/50 transition-colors duration-300">
-                    <div className="w-10 h-10 rounded-full bg-[#07C160]/20 flex items-center justify-center text-[#07C160]">
-                      <MessageCircle size={20} />
-                    </div>
-                    <div>
-                      <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">WeChat</div>
-                      <div className="text-white font-mono text-lg tracking-wide">onisakicom</div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </Reveal>
