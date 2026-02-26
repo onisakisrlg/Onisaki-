@@ -12,8 +12,6 @@ import { UiUxDemoPage } from './components/UiUxDemoPage';
 import { GameDemoPage } from './components/GameDemoPage';
 import { DxDemoPage } from './components/DxDemoPage';
 import { MobileDemoPage } from './components/MobileDemoPage';
-import { AffiliatePage } from './components/AffiliatePage';
-import { ContactModal } from './components/ContactModal';
 import { AdminLogin } from './components/AdminLogin';
 import { AdminDashboard } from './components/AdminDashboard';
 
@@ -25,8 +23,6 @@ function App() {
     const hour = new Date().getHours();
     return (hour >= 6 && hour < 18) ? 'light' : 'dark';
   });
-
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   const toggleTheme = () => {
     setTheme(prev => prev === 'dark' ? 'light' : 'dark');
@@ -46,7 +42,6 @@ function App() {
             <Route path="/legal" element={<LegalPage />} />
             <Route path="/process" element={<ProcessPage />} />
             <Route path="/privacy" element={<PrivacyPolicyPage />} />
-            <Route path="/recommendations" element={<AffiliatePage />} />
             
             {/* Demos */}
             <Route path="/web-demo" element={<WebDemoPage />} />
@@ -60,9 +55,6 @@ function App() {
             <Route path="/surilege" element={<AdminLogin />} />
             <Route path="/surilege/dashboard" element={<AdminDashboard />} />
           </Routes>
-
-          {/* Global Contact Components */}
-          <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
         </div>
       </div>
     </Router>

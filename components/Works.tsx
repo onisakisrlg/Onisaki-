@@ -31,7 +31,7 @@ const PROJECTS: Project[] = [
     title: 'Rainbow Passport 合同会社',
     category: 'Service Website',
     link: 'https://rpginza.com/',
-    keywords: ['会員制', 'コンシェルジュ', 'ライフスタイル']
+    keywords: ['会員制', 'コンシェルジュ']
   },
   {
     id: '4',
@@ -81,27 +81,24 @@ export const Works: React.FC = () => {
                 href={project.link} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group relative flex items-center justify-between p-5 h-36 bg-white dark:bg-white/5 border border-black/5 dark:border-white/10 rounded-xl overflow-hidden hover:border-oni-cyan/50 hover:shadow-[0_0_15px_rgba(0,240,255,0.1)] transition-all duration-300 w-full"
+                className="group relative flex items-center justify-between p-5 min-h-[9rem] bg-white dark:bg-white/5 border border-black/5 dark:border-white/10 rounded-xl overflow-hidden hover:border-oni-cyan/50 hover:shadow-[0_0_15px_rgba(0,240,255,0.1)] transition-all duration-300 w-full"
               >
                 {/* Hover Gradient Background */}
                 <div className="absolute inset-0 bg-gradient-to-r from-oni-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                 <div className="relative z-10 flex flex-col justify-center h-full min-w-0 flex-1 mr-4">
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400 group-hover:text-oni-cyan transition-colors mb-1 truncate">
-                    {project.category}
-                  </span>
-                  <h3 className="text-lg font-bold font-serif text-gray-900 dark:text-white group-hover:text-oni-cyan transition-colors truncate mb-3">
-                    {project.title}
-                  </h3>
-                  
                   {/* Keywords */}
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-3">
                     {project.keywords.map((keyword, i) => (
                       <span key={i} className={`text-xs font-bold px-2 py-1 rounded border ${KEYWORD_COLORS[i % KEYWORD_COLORS.length]} whitespace-nowrap`}>
                         #{keyword}
                       </span>
                     ))}
                   </div>
+
+                  <h3 className="text-lg font-bold font-serif text-gray-900 dark:text-white group-hover:text-oni-cyan transition-colors leading-tight">
+                    {project.title}
+                  </h3>
                 </div>
 
                 <div className="relative z-10 w-8 h-8 flex-shrink-0 flex items-center justify-center rounded-full bg-black/5 dark:bg-white/10 group-hover:bg-oni-cyan group-hover:text-black transition-all duration-300 transform group-hover:rotate-45 self-start mt-1">
