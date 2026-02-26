@@ -29,17 +29,17 @@ export const Concierge: React.FC = () => {
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto items-stretch">
           
           {/* Contact Info */}
-          <Reveal width="100%" delay={0.1}>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-8 md:p-10 h-full hover:border-oni-cyan/30 transition-colors duration-500">
+          <Reveal width="100%" delay={0.1} className="h-full">
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-8 md:p-10 h-full hover:border-oni-cyan/30 transition-colors duration-500 flex flex-col">
               <h3 className="text-2xl font-serif font-bold text-white mb-8 flex items-center gap-3">
                 <span className="w-1 h-8 bg-oni-cyan rounded-full"></span>
                 Contact Information
               </h3>
               
-              <div className="space-y-8">
+              <div className="space-y-8 flex-1">
                 <div className="flex items-start gap-4 group">
                   <div className="w-10 h-10 rounded-full bg-black/20 flex items-center justify-center text-oni-cyan group-hover:bg-oni-cyan group-hover:text-black transition-all duration-300">
                     <MapPin size={20} />
@@ -87,12 +87,24 @@ export const Concierge: React.FC = () => {
                     <p className="text-xs text-gray-500 mt-1">24時間受付 / 順次対応</p>
                   </div>
                 </div>
+
+                <div className="flex items-start gap-4 group">
+                  <div className="w-10 h-10 rounded-full bg-black/20 flex items-center justify-center text-[#07C160] group-hover:bg-[#07C160] group-hover:text-white transition-all duration-300">
+                    <MessageCircle size={20} />
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">WeChat</h4>
+                    <div className="text-gray-300 font-mono text-lg flex items-center gap-1">
+                      <CipherText text="onisakicom" />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </Reveal>
 
           {/* Message / Note */}
-          <Reveal width="100%" delay={0.2}>
+          <Reveal width="100%" delay={0.2} className="h-full">
             <div className="bg-gradient-to-br from-oni-card to-black border border-white/10 rounded-2xl p-8 md:p-10 h-full flex flex-col justify-center relative overflow-hidden group">
               {/* Decorative gradient blob */}
               <div className="absolute -top-20 -right-20 w-60 h-60 bg-oni-purple/20 rounded-full blur-[60px] group-hover:bg-oni-purple/30 transition-colors duration-500"></div>

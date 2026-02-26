@@ -5,9 +5,10 @@ interface RevealProps {
   width?: 'fit-content' | '100%';
   delay?: number;
   direction?: 'up' | 'down' | 'left' | 'right';
+  className?: string;
 }
 
-export const Reveal: React.FC<RevealProps> = ({ children, width = 'fit-content', delay = 0, direction = 'up' }) => {
+export const Reveal: React.FC<RevealProps> = ({ children, width = 'fit-content', delay = 0, direction = 'up', className = '' }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isAnimationComplete, setIsAnimationComplete] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -56,6 +57,7 @@ export const Reveal: React.FC<RevealProps> = ({ children, width = 'fit-content',
   return (
     <div 
       ref={ref} 
+      className={className}
       style={{ 
         width, 
         position: 'relative', 

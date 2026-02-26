@@ -143,7 +143,7 @@ export const Collection: React.FC = () => {
             }
 
             return (
-              <Reveal key={service.id} delay={index * 0.1}>
+              <Reveal key={service.id} delay={index * 0.1} className="h-full">
                  <Link to={linkTo} className="block h-full">
                    {CardContent}
                  </Link>
