@@ -39,6 +39,13 @@ const PROJECTS: Project[] = [
     category: 'Corporate Website',
     link: 'https://kensei-jp.vercel.app/',
     keywords: ['内装工事', 'リノベーション', '原状回復']
+  },
+  {
+    id: '5',
+    title: 'Orinova株式会社',
+    category: 'Corporate Website',
+    link: 'https://orinova.jp/',
+    keywords: ['Web開発', 'UI/UXデザイン', 'DX支援']
   }
 ];
 
