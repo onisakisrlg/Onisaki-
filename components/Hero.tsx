@@ -1,14 +1,18 @@
 import React from 'react';
 import { ChevronDown } from 'lucide-react';
 import { Section } from '../types';
+import { Reveal } from './ui/Reveal';
 import { CipherText } from './ui/CipherText';
 import { CyberServices } from './ui/CyberServices';
+import { useLanguage } from '../services/languageService';
 
 interface HeroProps {
   scrollToSection: (section: Section) => void;
 }
 
 export const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
+  const { t } = useLanguage();
+
   return (
     <section id={Section.HERO} className="relative w-full min-h-[100dvh] overflow-x-hidden flex items-center justify-center bg-transparent perspective-1000 pt-16 md:pt-0">
       
@@ -20,7 +24,7 @@ export const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
           <div className="border border-black/10 dark:border-white/10 px-4 py-1.5 md:px-6 md:py-2 rounded-full backdrop-blur-md animate-[slideUp_1s_ease-out_forwards] opacity-0 bg-white/50 dark:bg-white/5 shadow-[0_0_15px_rgba(0,240,255,0.2)]" style={{ animationDelay: '0.2s' }}>
             <h2 className="text-oni-cyan tracking-[0.2em] text-[10px] md:text-sm font-sans uppercase font-semibold">
                {/* Added hover={true} so it scrambles on mouseover */}
-               <CipherText text="Innovative Digital Agency" hover={true} delay={1200} />
+               <CipherText text={t('hero.title')} hover={true} delay={1200} />
             </h2>
           </div>
         </div>
@@ -53,7 +57,7 @@ export const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
           className="group relative px-8 py-3 md:px-10 md:py-4 border border-oni-cyan/50 text-gray-900 dark:text-white font-sans tracking-widest text-[10px] md:text-xs uppercase overflow-hidden transition-all duration-300 hover:border-oni-cyan hover:shadow-[0_0_20px_rgba(0,240,255,0.4)] opacity-0 animate-[fadeIn_1s_ease-out_forwards] rounded-sm"
           style={{ animationDelay: '1.5s' }}
         >
-          <span className="relative z-10 group-hover:text-black transition-colors duration-300 font-bold">Start Project</span>
+          <span className="relative z-10 group-hover:text-black transition-colors duration-300 font-bold">{t('hero.cta')}</span>
           <div className="absolute inset-0 bg-oni-cyan transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
         </button>
       </div>

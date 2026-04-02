@@ -4,53 +4,56 @@ import { Section, ServiceItem } from '../types';
 import { Reveal } from './ui/Reveal';
 import { ArrowRight } from 'lucide-react';
 import { WebDevAnim, EcAnim, UiUxAnim, GameAnim, DxAnim, MobileAnim } from './ServiceAnimations';
-
-const SERVICES: ServiceItem[] = [
-  {
-    id: '1',
-    title: 'WEB開発',
-    subtitle: 'Web Development',
-    description: 'Scalable, high-performance web applications using modern frameworks like React and Next.js.',
-    icon: <WebDevAnim />
-  },
-  {
-    id: '2',
-    title: 'EC構築',
-    subtitle: 'E-Commerce',
-    description: 'Custom EC solutions that drive sales. From Shopify customization to full-stack builds.',
-    icon: <EcAnim />
-  },
-  {
-    id: '3',
-    title: 'UIデザイン',
-    subtitle: 'UI/UX Design',
-    description: 'Crafting intuitive and beautiful user interfaces that elevate your brand identity.',
-    icon: <UiUxAnim />
-  },
-  {
-    id: '4',
-    title: 'ゲーム開発',
-    subtitle: 'Game Development',
-    description: 'Immersive interactive experiences and web-based games built with Unity and modern webGL tech.',
-    icon: <GameAnim />
-  },
-  {
-    id: '5',
-    title: '業務DX支援',
-    subtitle: 'System Optimization',
-    description: 'Modernizing legacy systems and optimizing existing business workflows for maximum efficiency.',
-    icon: <DxAnim />
-  },
-  {
-    id: '6',
-    title: 'アプリ開発',
-    subtitle: 'Mobile Application',
-    description: 'Native and cross-platform mobile apps (iOS/Android) designed for seamless user engagement.',
-    icon: <MobileAnim />
-  }
-];
+import { useLanguage } from '../services/languageService';
 
 export const Collection: React.FC = () => {
+  const { t } = useLanguage();
+
+  const SERVICES: ServiceItem[] = [
+    {
+      id: '1',
+      title: t('services.web.title'),
+      subtitle: t('services.web.sub'),
+      description: t('services.web.desc'),
+      icon: <WebDevAnim />
+    },
+    {
+      id: '2',
+      title: t('services.ec.title'),
+      subtitle: t('services.ec.sub'),
+      description: t('services.ec.desc'),
+      icon: <EcAnim />
+    },
+    {
+      id: '3',
+      title: t('services.ui.title'),
+      subtitle: t('services.ui.sub'),
+      description: t('services.ui.desc'),
+      icon: <UiUxAnim />
+    },
+    {
+      id: '4',
+      title: t('services.game.title'),
+      subtitle: t('services.game.sub'),
+      description: t('services.game.desc'),
+      icon: <GameAnim />
+    },
+    {
+      id: '5',
+      title: t('services.dx.title'),
+      subtitle: t('services.dx.sub'),
+      description: t('services.dx.desc'),
+      icon: <DxAnim />
+    },
+    {
+      id: '6',
+      title: t('services.mobile.title'),
+      subtitle: t('services.mobile.sub'),
+      description: t('services.mobile.desc'),
+      icon: <MobileAnim />
+    }
+  ];
+
   return (
     <section id={Section.SERVICES} className="py-16 md:py-24 bg-oni-light-bg/90 dark:bg-oni-bg/90 backdrop-blur-sm border-t border-black/5 dark:border-white/5 transition-colors duration-500">
       <div className="container mx-auto px-6">
@@ -59,17 +62,17 @@ export const Collection: React.FC = () => {
             {/* Bilingual Header */}
             <h2 className="flex flex-col items-center justify-center gap-2">
               <span className="text-3xl md:text-6xl font-serif font-bold text-gray-900 dark:text-white transition-colors duration-500 tracking-wide">
-                Our Services
+                {t('services.title')}
               </span>
               <span className="text-lg md:text-2xl text-oni-cyan font-bold tracking-[0.3em] font-sans mt-2 relative">
                 <span className="absolute inset-0 blur-md bg-oni-cyan/20 rounded-full"></span>
-                <span className="relative">事業内容</span>
+                <span className="relative">{t('services.subtitle')}</span>
               </span>
             </h2>
           </Reveal>
           <Reveal delay={0.2} direction="down">
              <div className="w-16 h-1 bg-gradient-to-r from-oni-cyan to-oni-magenta mx-auto rounded-full my-4"></div>
-             <p className="text-gray-500 dark:text-gray-400 font-sans tracking-widest text-[10px] md:text-xs uppercase font-bold">Comprehensive Digital Solutions</p>
+             <p className="text-gray-500 dark:text-gray-400 font-sans tracking-widest text-[10px] md:text-xs uppercase font-bold">{t('services.desc')}</p>
           </Reveal>
         </div>
 

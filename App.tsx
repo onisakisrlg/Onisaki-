@@ -14,6 +14,7 @@ import { DxDemoPage } from './components/DxDemoPage';
 import { MobileDemoPage } from './components/MobileDemoPage';
 import { AdminLogin } from './components/AdminLogin';
 import { AdminDashboard } from './components/AdminDashboard';
+import { LanguageProvider } from './services/languageService';
 
 function App() {
   // Automatically determine theme based on local time
@@ -29,35 +30,37 @@ function App() {
   };
 
   return (
-    <Router>
-      <div className={`${theme} transition-colors duration-500`}>
-        <div className="min-h-screen font-sans relative bg-oni-light-bg text-gray-900 dark:bg-oni-bg dark:text-white transition-colors duration-500 selection:bg-oni-cyan selection:text-black pb-20 md:pb-0">
-          <CustomCursor />
-          
-          {/* Global Background persists across routes */}
-          <InteractiveBackground theme={theme} />
-          
-          <Routes>
-            <Route path="/" element={<MainLayout theme={theme} toggleTheme={toggleTheme} />} />
-            <Route path="/legal" element={<LegalPage />} />
-            <Route path="/process" element={<ProcessPage />} />
-            <Route path="/privacy" element={<PrivacyPolicyPage />} />
+    <LanguageProvider>
+      <Router>
+        <div className={`${theme} transition-colors duration-500`}>
+          <div className="min-h-screen font-sans relative bg-oni-light-bg text-gray-900 dark:bg-oni-bg dark:text-white transition-colors duration-500 selection:bg-oni-cyan selection:text-black pb-20 md:pb-0">
+            <CustomCursor />
             
-            {/* Demos */}
-            <Route path="/web-demo" element={<WebDemoPage />} />
-            <Route path="/ec-demo" element={<EcDemoPage />} />
-            <Route path="/ui-demo" element={<UiUxDemoPage />} />
-            <Route path="/game-demo" element={<GameDemoPage />} />
-            <Route path="/dx-demo" element={<DxDemoPage />} />
-            <Route path="/mobile-demo" element={<MobileDemoPage />} />
+            {/* Global Background persists across routes */}
+            <InteractiveBackground theme={theme} />
+            
+            <Routes>
+              <Route path="/" element={<MainLayout theme={theme} toggleTheme={toggleTheme} />} />
+              <Route path="/legal" element={<LegalPage />} />
+              <Route path="/process" element={<ProcessPage />} />
+              <Route path="/privacy" element={<PrivacyPolicyPage />} />
+              
+              {/* Demos */}
+              <Route path="/web-demo" element={<WebDemoPage />} />
+              <Route path="/ec-demo" element={<EcDemoPage />} />
+              <Route path="/ui-demo" element={<UiUxDemoPage />} />
+              <Route path="/game-demo" element={<GameDemoPage />} />
+              <Route path="/dx-demo" element={<DxDemoPage />} />
+              <Route path="/mobile-demo" element={<MobileDemoPage />} />
 
-            {/* Admin Routes */}
-            <Route path="/surilege" element={<AdminLogin />} />
-            <Route path="/surilege/dashboard" element={<AdminDashboard />} />
-          </Routes>
+              {/* Admin Routes */}
+              <Route path="/surilege" element={<AdminLogin />} />
+              <Route path="/surilege/dashboard" element={<AdminDashboard />} />
+            </Routes>
+          </div>
         </div>
-      </div>
-    </Router>
+      </Router>
+    </LanguageProvider>
   );
 }
 

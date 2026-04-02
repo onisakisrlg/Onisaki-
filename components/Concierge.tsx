@@ -3,8 +3,11 @@ import { Section } from '../types';
 import { Reveal } from './ui/Reveal';
 import { CipherText } from './ui/CipherText';
 import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
+import { useLanguage } from '../services/languageService';
 
 export const Concierge: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <section id={Section.CONTACT} className="py-24 bg-oni-bg relative z-10 border-t border-white/5 overflow-hidden">
       
@@ -18,11 +21,11 @@ export const Concierge: React.FC = () => {
           <Reveal width="100%">
             <h2 className="flex flex-col items-center justify-center gap-2">
               <span className="text-4xl md:text-6xl font-serif font-bold text-white tracking-wide">
-                Concierge
+                {t('contact.title')}
               </span>
               <span className="text-lg md:text-xl text-oni-cyan font-bold tracking-[0.3em] font-sans mt-2 relative">
                 <span className="absolute inset-0 blur-md bg-oni-cyan/20 rounded-full"></span>
-                <span className="relative">お問い合わせ</span>
+                <span className="relative">{t('contact.subtitle')}</span>
               </span>
             </h2>
             <div className="w-16 h-1 bg-gradient-to-r from-oni-cyan to-oni-purple mx-auto rounded-full mt-8"></div>
@@ -36,7 +39,7 @@ export const Concierge: React.FC = () => {
             <div className="bg-white/5 border border-white/10 rounded-2xl p-8 md:p-10 h-full hover:border-oni-cyan/30 transition-colors duration-500 flex flex-col">
               <h3 className="text-2xl font-serif font-bold text-white mb-8 flex items-center gap-3">
                 <span className="w-1 h-8 bg-oni-cyan rounded-full"></span>
-                Contact Information
+                {t('contact.info')}
               </h3>
               
               <div className="space-y-8 flex-1">
@@ -45,7 +48,7 @@ export const Concierge: React.FC = () => {
                     <MapPin size={20} />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Address</h4>
+                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">{t('contact.address')}</h4>
                     <p className="text-gray-300 leading-relaxed">
                       〒104-0061<br />
                       東京都中央区銀座１-２２-１１<br />
@@ -67,11 +70,11 @@ export const Concierge: React.FC = () => {
                     <Phone size={20} />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Phone</h4>
+                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">{t('contact.phone')}</h4>
                     <div className="text-gray-300 font-mono text-lg flex items-center gap-1">
                       <CipherText text="050" />-<CipherText text="6864" />-<CipherText text="0984" />
                     </div>
-                    <p className="text-xs text-gray-500 mt-1">平日 10:00 - 18:00</p>
+                    <p className="text-xs text-gray-500 mt-1">{t('contact.hours')}</p>
                   </div>
                 </div>
 
@@ -80,11 +83,11 @@ export const Concierge: React.FC = () => {
                     <Mail size={20} />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Email</h4>
+                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">{t('contact.email')}</h4>
                     <div className="text-gray-300 font-mono text-lg flex items-center gap-1">
                       <CipherText text="support" />@<CipherText text="onisaki.com" />
                     </div>
-                    <p className="text-xs text-gray-500 mt-1">24時間受付 / 順次対応</p>
+                    <p className="text-xs text-gray-500 mt-1">{t('contact.response')}</p>
                   </div>
                 </div>
 
@@ -93,7 +96,7 @@ export const Concierge: React.FC = () => {
                     <MessageCircle size={20} />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">WeChat</h4>
+                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">{t('contact.wechat')}</h4>
                     <div className="text-gray-300 font-mono text-lg flex items-center gap-1">
                       <CipherText text="onisakicom" />
                     </div>
@@ -111,19 +114,16 @@ export const Concierge: React.FC = () => {
               
               <div className="relative z-10">
                 <h3 className="text-2xl font-serif font-bold text-white mb-6">
-                  For New Projects
+                  {t('contact.new_projects')}
                 </h3>
-                <p className="text-gray-400 leading-relaxed mb-8">
-                  Web制作、システム開発、DX支援など、デジタル領域の課題解決についてお気軽にご相談ください。<br/><br/>
-                  現在、多数のご依頼をいただいており、新規のご相談はメールにて承っております。
-                </p>
+                <p className="text-gray-400 leading-relaxed mb-8" dangerouslySetInnerHTML={{ __html: t('contact.new_projects_desc') }} />
                 
                 <a 
                   href="mailto:support@onisaki.com"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-black font-bold tracking-widest uppercase rounded-full hover:bg-oni-cyan transition-colors duration-300 w-full md:w-auto"
                 >
                   <Mail size={18} />
-                  Send Email
+                  {t('contact.send_email')}
                 </a>
               </div>
             </div>

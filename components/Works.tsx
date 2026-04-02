@@ -2,6 +2,7 @@ import React from 'react';
 import { Section } from '../types';
 import { Reveal } from './ui/Reveal';
 import { ArrowUpRight } from 'lucide-react';
+import { useLanguage } from '../services/languageService';
 
 interface Project {
   id: string;
@@ -109,6 +110,8 @@ const KEYWORD_COLORS = [
 ];
 
 export const Works: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <section id={Section.WORKS} className="py-16 md:py-24 bg-oni-light-bg dark:bg-oni-bg relative z-10 border-t border-black/5 dark:border-white/5 transition-colors duration-500">
       
@@ -123,11 +126,11 @@ export const Works: React.FC = () => {
           <Reveal width="100%">
             <h2 className="flex flex-col items-center justify-center gap-2">
               <span className="text-3xl md:text-5xl font-serif font-bold text-gray-900 dark:text-white transition-colors duration-500 tracking-wide">
-                Selected Works
+                {t('works.title')}
               </span>
               <span className="text-sm md:text-lg text-oni-purple font-bold tracking-[0.3em] font-sans mt-2 relative">
                 <span className="absolute inset-0 blur-md bg-oni-purple/20 rounded-full"></span>
-                <span className="relative">制作実績</span>
+                <span className="relative">{t('works.subtitle')}</span>
               </span>
             </h2>
           </Reveal>

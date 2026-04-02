@@ -5,6 +5,7 @@ import { Hero } from './Hero';
 import { Philosophy } from './Philosophy';
 import { Collection } from './Collection';
 import { Works } from './Works';
+import { Pricing } from './Pricing';
 import { DeliveryProcess } from './DeliveryProcess';
 import { Concierge } from './Concierge';
 import { Footer } from './Footer';
@@ -29,7 +30,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ theme, toggleTheme }) =>
       // Detection point: roughly 30% down the screen (user focus area)
       const scrollPosition = window.scrollY + window.innerHeight * 0.3;
 
-      const sections = [Section.HERO, Section.VISION, Section.SERVICES, Section.WORKS, Section.CONTACT];
+      const sections = [Section.HERO, Section.VISION, Section.SERVICES, Section.PRICING, Section.WORKS, Section.CONTACT];
       
       let current = Section.HERO;
       
@@ -91,6 +92,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ theme, toggleTheme }) =>
       <main className="relative z-10">
         <Hero scrollToSection={scrollToSection} />
         <Philosophy /> 
+        <Pricing />
         <Collection />
         <Works />
         <DeliveryProcess />
