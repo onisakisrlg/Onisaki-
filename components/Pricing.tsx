@@ -173,7 +173,7 @@ export const Pricing: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {PLANS.map((plan, index) => (
-            <Reveal key={plan.id} delay={index * 0.1} className="h-full">
+            <Reveal key={plan.id} delay={index * 0.1} className="h-full" width="100%">
               <motion.div 
                 whileHover={{ y: -10 }}
                 transition={{ type: 'spring', stiffness: 300 }}

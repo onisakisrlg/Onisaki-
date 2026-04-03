@@ -100,6 +100,14 @@ const PROJECTS: Project[] = [
     link: 'https://kinshoji.vercel.app/',
     keywords: ['貿易', '卸売', 'グローバル'],
     theme: 'emerald'
+  },
+  {
+    id: '7',
+    title: 'TF合同会社',
+    category: 'E-commerce Website',
+    link: 'https://tfgoods.jp/',
+    keywords: ['グッズ制作', 'オリジナル商品', 'ECサイト'],
+    theme: 'violet'
   }
 ];
 
