@@ -80,7 +80,21 @@ export const Footer: React.FC = () => {
            <div className="col-span-1">
              <h4 className="text-gray-900 dark:text-white font-bold mb-4 text-sm uppercase tracking-wider">{t('footer.resources')}</h4>
              <ul className="text-gray-500 dark:text-gray-500 text-xs space-y-2">
-               {/* Removed Onisaki Selects */}
+               <li>
+                 <Link to="/legal" className="hover:text-oni-cyan transition-colors">
+                   {t('footer.legal')}
+                 </Link>
+               </li>
+               <li>
+                 <Link to="/process" className="hover:text-oni-cyan transition-colors">
+                   {t('footer.process')}
+                 </Link>
+               </li>
+               <li>
+                 <Link to="/privacy" className="hover:text-oni-cyan transition-colors">
+                   {t('footer.privacy')}
+                 </Link>
+               </li>
              </ul>
              
              <h4 className="text-gray-900 dark:text-white font-bold mt-8 mb-4 text-sm uppercase tracking-wider">{t('footer.office')}</h4>
