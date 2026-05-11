@@ -108,6 +108,14 @@ const PROJECTS: Project[] = [
     link: 'https://tfgoods.jp/',
     keywords: ['グッズ制作', 'オリジナル商品', 'ECサイト'],
     theme: 'violet'
+  },
+  {
+    id: '8',
+    title: 'Amazone Nature Lodge',
+    category: 'Service Website',
+    link: 'https://amazone-nature-lodge.jp/',
+    keywords: ['ロッジ', '自然体験', '観光'],
+    theme: 'emerald'
   }
 ];
 
