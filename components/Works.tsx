@@ -124,6 +124,14 @@ const PROJECTS: Project[] = [
     link: 'https://hayakougyou.com/',
     keywords: ['建設', '工業', 'コーポレート'],
     theme: 'blue'
+  },
+  {
+    id: '10',
+    title: 'Coming Soon',
+    category: 'Coming Soon',
+    link: '#',
+    keywords: ['制作中', '新プロジェクト'],
+    theme: 'indigo'
   }
 ];
 
