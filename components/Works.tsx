@@ -116,6 +116,14 @@ const PROJECTS: Project[] = [
     link: 'https://amazone-nature-lodge.jp/',
     keywords: ['ロッジ', '自然体験', '観光'],
     theme: 'emerald'
+  },
+  {
+    id: '9',
+    title: '早興業株式会社',
+    category: 'Corporate Website',
+    link: 'https://hayakougyou.com/',
+    keywords: ['建設', '工業', 'コーポレート'],
+    theme: 'blue'
   }
 ];
 
