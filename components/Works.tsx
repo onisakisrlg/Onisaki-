@@ -127,6 +127,22 @@ const PROJECTS: Project[] = [
   },
   {
     id: '10',
+    title: 'exist合同会社',
+    category: 'Service Website',
+    link: 'https://exist-reform.jp/',
+    keywords: ['リフォーム', '住宅改修', 'リノベーション'],
+    theme: 'amber'
+  },
+  {
+    id: '11',
+    title: '小松株式会社',
+    category: 'Corporate Website',
+    link: 'https://komatsujapan.co.jp/',
+    keywords: ['貿易', 'グローバル', '設備'],
+    theme: 'emerald'
+  },
+  {
+    id: '12',
     title: 'Coming Soon',
     category: 'Coming Soon',
     link: '#',
