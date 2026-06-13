@@ -179,11 +179,36 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, scrollToSection, 
                  </div>
                  <div className="absolute inset-0 bg-oni-cyan/10 scale-0 group-hover:scale-100 transition-transform duration-300 rounded-full"></div>
               </button>
+
+              {/* LINE Button */}
+              <a 
+                href="https://lin.ee/T8qLivX"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="LINE Official Account"
+                className="hidden md:flex items-center gap-2 px-5 py-2 bg-[#00C300] text-white rounded-full hover:bg-[#00B300] hover:shadow-[0_0_15px_rgba(0,195,0,0.4)] transition-all duration-300 font-bold text-[11px] tracking-wider uppercase hover:scale-105"
+              >
+                <svg viewBox="0 0 24 24" className="w-[16px] h-[16px]" fill="currentColor">
+                  <path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.036 9.608.391.084.922.258 1.057.592.122.303.079.778.039 1.085l-.171 1.027c-.053.303-.242 1.186 1.039.647 1.281-.539 6.911-4.069 9.428-6.967 1.739-1.907 2.572-3.844 2.572-5.992zm-18.988 2.595h-2.392c-.266 0-.482-.216-.482-.482v-4.83c0-.266.216-.482.482-.482h2.392c.266 0 .482.216.482.482v4.83c0 .266-.216.482-.482.482zm7.143-4.83c0-.266-.216-.482-.482-.482h-3.328c-.266 0-.482.216-.482.482v4.83c0 .266.216.482.482.482h3.328c.266 0 .482-.216.482-.482v-4.83zm3.766 4.83c0 .266.216.482.482.482h2.392c.266 0 .482-.216.482-.482v-4.83c0-.266-.216-.482-.482-.482h-2.392c-.266 0-.482.216-.482.482v4.83zm-10.91 0c0 .266.216.482.482.482h2.392c.266 0 .482-.216.482-.482v-1.428h-1.91v-1.97h1.91v-1.428h-2.392c-.266 0-.482.216-.482.482v4.344z"/>
+                </svg>
+                <span>LINE</span>
+              </a>
             </div>
           </div>
 
           {/* Mobile Toggle Group */}
           <div className="md:hidden flex items-center gap-2">
+            <a 
+              href="https://lin.ee/T8qLivX"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 bg-[#00C300] text-white rounded-full hover:bg-[#00B300] transition-colors shadow-sm hover:shadow-[0_0_15px_rgba(0,195,0,0.4)]"
+            >
+              <svg viewBox="0 0 24 24" className="w-[18px] h-[18px]" fill="currentColor">
+                <path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.036 9.608.391.084.922.258 1.057.592.122.303.079.778.039 1.085l-.171 1.027c-.053.303-.242 1.186 1.039.647 1.281-.539 6.911-4.069 9.428-6.967 1.739-1.907 2.572-3.844 2.572-5.992zm-18.988 2.595h-2.392c-.266 0-.482-.216-.482-.482v-4.83c0-.266.216-.482.482-.482h2.392c.266 0 .482.216.482.482v4.83c0 .266-.216.482-.482.482h3.328c.266 0 .482-.216.482-.482v-4.83zm3.766 4.83c0 .266.216.482.482.482h2.392c.266 0 .482-.216.482-.482v-4.83c0-.266-.216-.482-.482-.482h-2.392c-.266 0-.482.216-.482.482v4.83zm-10.91 0c0 .266.216.482.482.482h2.392c.266 0 .482-.216.482-.482v-1.428h-1.91v-1.97h1.91v-1.428h-2.392c-.266 0-.482.216-.482.482v4.344z"/>
+              </svg>
+            </a>
+
             <button 
               onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
               className="p-2 text-gray-800 dark:text-white hover:text-oni-cyan transition-colors"

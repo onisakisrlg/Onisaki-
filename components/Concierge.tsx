@@ -6,7 +6,8 @@ import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
 import { useLanguage } from '../services/languageService';
 
 export const Concierge: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const currentLang = language === 'en' || language === 'zh-CN' || language === 'zh-TW' ? language : 'ja';
 
   return (
     <section id={Section.CONTACT} className="py-24 bg-oni-bg relative z-10 border-t border-white/5 overflow-hidden">
@@ -102,6 +103,22 @@ export const Concierge: React.FC = () => {
                     </div>
                   </div>
                 </div>
+
+                <div className="flex items-start gap-4 group">
+                  <div className="w-10 h-10 rounded-full bg-black/20 flex items-center justify-center text-[#00C300] group-hover:bg-[#00C300] group-hover:text-white transition-all duration-300">
+                    <svg viewBox="0 0 24 24" className="w-[20px] h-[20px]" fill="currentColor">
+                      <path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.036 9.608.391.084.922.258 1.057.592.122.303.079.778.039 1.085l-.171 1.027c-.053.303-.242 1.186 1.039.647 1.281-.539 6.911-4.069 9.428-6.967 1.739-1.907 2.572-3.844 2.572-5.992zm-18.988 2.595h-2.392c-.266 0-.482-.216-.482-.482v-4.83c0-.266.216-.482.482-.482h2.392c.266 0 .482.216.482.482v4.83c0 .266-.216.482-.482.482zm7.143-4.83c0-.266-.216-.482-.482-.482h-3.328c-.266 0-.482.216-.482.482v4.83c0 .266.216.482.482.482h3.328c.266 0 .482-.216.482-.482v-4.83zm3.766 4.83c0 .266.216.482.482.482h2.392c.266 0 .482-.216.482-.482v-4.83c0-.266-.216-.482-.482-.482h-2.392c-.266 0-.482.216-.482.482v4.83zm-10.91 0c0 .266.216.482.482.482h2.392c.266 0 .482-.216.482-.482v-1.428h-1.91v-1.97h1.91v-1.428h-2.392c-.266 0-.482.216-.482.482v4.344z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">LINE</h4>
+                    <div className="text-gray-300 font-mono text-lg flex items-center gap-1">
+                      <a href="https://lin.ee/T8qLivX" target="_blank" rel="noopener noreferrer" className="hover:text-[#00C300] transition-colors border-b border-transparent hover:border-[#00C300] pb-0.5 mt-1 text-sm font-sans">
+                        LINE
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </Reveal>
@@ -118,13 +135,27 @@ export const Concierge: React.FC = () => {
                 </h3>
                 <p className="text-gray-400 leading-relaxed mb-8" dangerouslySetInnerHTML={{ __html: t('contact.new_projects_desc') }} />
                 
-                <a 
-                  href="mailto:support@onisaki.com"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-black font-bold tracking-widest uppercase rounded-full hover:bg-oni-cyan transition-colors duration-300 w-full md:w-auto"
-                >
-                  <Mail size={18} />
-                  {t('contact.send_email')}
-                </a>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a 
+                    href="mailto:support@onisaki.com"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-black font-bold tracking-widest uppercase rounded-full hover:bg-oni-cyan transition-colors duration-300 w-full sm:w-auto"
+                  >
+                    <Mail size={18} />
+                    {t('contact.send_email')}
+                  </a>
+                  
+                  <a 
+                    href="https://lin.ee/T8qLivX"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#00C300] text-white font-bold tracking-widest uppercase rounded-full hover:bg-[#00B300] hover:shadow-[0_0_20px_rgba(0,195,0,0.4)] transition-all duration-300 w-full sm:w-auto"
+                  >
+                    <svg viewBox="0 0 24 24" className="w-[18px] h-[18px]" fill="currentColor">
+                      <path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.036 9.608.391.084.922.258 1.057.592.122.303.079.778.039 1.085l-.171 1.027c-.053.303-.242 1.186 1.039.647 1.281-.539 6.911-4.069 9.428-6.967 1.739-1.907 2.572-3.844 2.572-5.992zm-18.988 2.595h-2.392c-.266 0-.482-.216-.482-.482v-4.83c0-.266.216-.482.482-.482h2.392c.266 0 .482.216.482.482v4.83c0 .266-.216.482-.482.482h3.328c.266 0 .482-.216.482-.482v-4.83zm3.766 4.83c0 .266.216.482.482.482h2.392c.266 0 .482-.216.482-.482v-4.83c0-.266-.216-.482-.482-.482h-2.392c-.266 0-.482.216-.482.482v4.83zm-10.91 0c0 .266.216.482.482.482h2.392c.266 0 .482-.216.482-.482v-1.428h-1.91v-1.97h1.91v-1.428h-2.392c-.266 0-.482.216-.482.482v4.344z"/>
+                    </svg>
+                    LINE
+                  </a>
+                </div>
               </div>
             </div>
           </Reveal>
