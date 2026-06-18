@@ -143,6 +143,14 @@ const PROJECTS: Project[] = [
   },
   {
     id: '12',
+    title: '株式会社初禾',
+    category: 'Corporate Website',
+    link: 'https://chuhechuhe-kappa.vercel.app/',
+    keywords: ['貿易', '卸売', 'グローバル'],
+    theme: 'blue'
+  },
+  {
+    id: '13',
     title: 'Coming Soon',
     category: 'Coming Soon',
     link: '#',
